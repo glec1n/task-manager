@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}<h1>To Do List</h1>{% endblock %}
+
+{% block info %}
+    {% if task %}
+        {% for item in task %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ item.title }}</h3>
+                <p class = "p-1">{{ item.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>There is no tasks</p>
+    {% endif %}
+{% endblock %}
